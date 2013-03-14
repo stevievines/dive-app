@@ -1,0 +1,114 @@
+Dive:
+	-primary key (int, whatever)
+	-Dive number
+	-Dive position
+	-Dive name
+	-Current degree of difficulty (pull from table, calculate if missing) 
+
+Score:
+	- Judge (fk to coach)
+	- Value
+	- Dropped (boolean)
+	- Competed Dive (fk to competed dive)
+
+Competed Dive:
+	- Dive (foreign key)
+	- Competed dd (pull from table, calculate if missing)
+	- Diver (foreign key)
+	- Event (foreign key)
+	- Meet (fk)
+	- Scores (one to many, pulls from score index)
+	- Net Total (sum of kept scores (dropped == false))
+	- Total = Net Total * (3/number of scores kept (fk)) * competed dd
+	- isRequired (boolean) # required or optional dive
+	- Video (fk)
+	- isScored (boolean)
+	- list order
+	- isBalk
+	- isFailed
+
+Event : 
+	- Meet (fk)
+	- Date
+	- Age-group (fk)  
+	- Rules (fk)
+	- Number of dives 
+	- Number of scores
+	- Number of judges
+	- Number of scores kept
+	- Board
+	- Individual?
+	- Format (11-dive, 6-dive, other)
+	- is completed
+	
+	
+Age-group:
+	- Governing body (fk)
+	- Age-range (string)
+	
+	
+Meet :
+	- Governing Body (fk)
+	- Start date
+	- End date
+	- Pool (fk)
+
+
+	
+EventRules :
+	- Number of dives 
+	- Number requireds 
+	- Max required d.d 
+	- Number of required categories
+	- Number optionals
+	- Min optional d.d
+	- Number of optional categories
+	- Governing Body  (fk)
+
+	
+Governing Body:
+	- Name
+
+
+Video:
+	- pk
+	- Event (fk)
+	- Dive 
+
+	
+Club :
+	- name
+	- location
+
+Diver :
+	- Name
+	- City/state
+	- Country
+	- Gender
+	- Birthday
+	- Divemeets #id
+	- Photo
+
+	
+Diver2Club:
+	- Diver (fk)
+	- Club (fk)
+
+
+Club2Coach:
+	- Club (fk)
+	- Coach (fk)
+
+Coach :
+	- Name
+	- City/State
+	- Country
+	- Gender
+	- Divemeets id
+	
+
+Pool 
+	- Name
+	- City
+	- State
+	- Country
