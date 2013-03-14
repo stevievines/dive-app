@@ -1,4 +1,4 @@
-dive-database
-=============
+# Boss Status diving web App
 
-Baller Diving Project (dive meets 2.0)
+This is the beginning of a new era of diving, created by masterminds
+Stevie Vines and Chris Kelly.
