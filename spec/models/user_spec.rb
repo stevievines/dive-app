@@ -42,13 +42,6 @@ require 'spec_helper'
       it { should_not be_valid }
     end
 
-    # don't think this will ever be possible, as form will just have boolean
-    # but couldn't hurt to include I suppose...
-    describe "when isDiver is not present" do
-      before { @user.isDiver = " " }
-      it { should_not be_valid }
-    end
-
     describe "when password is not present" do
       before { @user.password = @user.password_confirmation = " " }
       it { should_not be_valid }

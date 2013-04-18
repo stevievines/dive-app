@@ -1,1 +1,3 @@
 I had to add sqlite to development part of gemfile in order to generate rspec tests (following the command in ch 3.2.1), dunno if that is an issue
+
+-ran into some complicated stuff for creating the diver form. Capybara API and rails API helped. Tons of methods in Capybara for filling out forms ("choose" for radio button is what I needed, took forever to get it working for some reason)
