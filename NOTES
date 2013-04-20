@@ -1,3 +1,5 @@
 I had to add sqlite to development part of gemfile in order to generate rspec tests (following the command in ch 3.2.1), dunno if that is an issue
 
 -ran into some complicated stuff for creating the diver form. Capybara API and rails API helped. Tons of methods in Capybara for filling out forms ("choose" for radio button is what I needed, took forever to get it working for some reason)
+
+-added coaches and divers links to signed in navbar (currently stubs) do we want those pages do display diff things depending on whether user is a diver or a coach? like divers can see list of coaches, but not the coaches profile? i can't think of a reason to differentiate currently but something to keep in mind. if so, chapter 8 may be helpful
