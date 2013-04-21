@@ -1,9 +1,13 @@
 FactoryGirl.define do
   factory :user do
-    name     "Stevie Vines"
-    email    "stevie@example.com"
-    isDiver  true
+    sequence(:name)  { |n| "Person #{n}" }
+    sequence(:email) { |n| "person_#{n}@example.com"} 
+    isDiver true  
     password "foobar"
     password_confirmation "foobar"
+
+    factory :admin do
+      admin true
+  	end
   end
 end

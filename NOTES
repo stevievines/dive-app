@@ -3,3 +3,7 @@ I had to add sqlite to development part of gemfile in order to generate rspec te
 -ran into some complicated stuff for creating the diver form. Capybara API and rails API helped. Tons of methods in Capybara for filling out forms ("choose" for radio button is what I needed, took forever to get it working for some reason)
 
 -added coaches and divers links to signed in navbar (currently stubs) do we want those pages do display diff things depending on whether user is a diver or a coach? like divers can see list of coaches, but not the coaches profile? i can't think of a reason to differentiate currently but something to keep in mind. if so, chapter 8 may be helpful
+
+-may want to replace gravatar stuff with our own profile image management, but gravatar is super easy for initial setup.
+
+-should we have done divers and coaches rather than users? I think it makes sense to have users because not all divers and coaches represented in our site (and db) will be users as well, but seems a little weird to me right now.
