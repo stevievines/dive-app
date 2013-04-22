@@ -11,10 +11,10 @@
       <%= f.label :email %>
       <%= f.text_field :email %>
 
-      <%= f.radio_button :isDiver, true, :checked => true %> 
+      <%= f.check_box :isDiver %> 
       <%= label :isDiver, 'Diver' %>
-      <%= f.radio_button :isDiver, false %>
-      <%= label :isDiver, 'Coach' %>
+      <%= f.check_box :isCoach %>
+      <%= label :isCoach, 'Coach' %>
 
       <!-- Could be cool for later -->
       <select>

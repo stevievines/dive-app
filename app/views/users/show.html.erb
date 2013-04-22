@@ -5,12 +5,16 @@
       <h1>
         <%= gravatar_for @user %>
         <%= @user.name %>
-        <% if @user.isDiver %>
-          (Diver)
-        <% else %>
-          (Coach)
-        <% end %>
       </h1>
+      <h2>
+        <% if @user.isDiver && @user.isCoach %>
+          Diver,&nbsp Coach
+        <% elsif @user.isDiver %>
+          Diver
+        <% elsif @user.isCoach %>
+          Coach
+        <% end %>
+      </h2>
     </section>
   </aside>
 </div>
