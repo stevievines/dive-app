@@ -1,0 +1,14 @@
+<% provide(:title, 'All divers') %>
+<h1>All divers</h1>
+
+<%= will_paginate %>
+
+<ul class="divers">
+ <% @divers.each do |diver| %>
+    <li>
+      <%= link_to diver.name, diver %>
+    </li>
+  <% end %>
+</ul>
+
+<%= will_paginate %>

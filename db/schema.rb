@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130422183820) do
+ActiveRecord::Schema.define(:version => 20130424005852) do
+
+  create_table "divers", :force => true do |t|
+    t.string   "name"
+    t.string   "city"
+    t.string   "state"
+    t.string   "gender"
+    t.date     "birthday"
+    t.integer  "divemeets_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "name"
@@ -23,6 +34,10 @@ ActiveRecord::Schema.define(:version => 20130422183820) do
     t.string   "remember_token"
     t.boolean  "admin",           :default => false
     t.boolean  "isCoach"
+    t.string   "city"
+    t.string   "state"
+    t.string   "gender"
+    t.datetime "birthday"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

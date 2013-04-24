@@ -1,4 +1,7 @@
 DiveApp::Application.routes.draw do
+  get "divers/new"
+
+  resources :divers
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
 

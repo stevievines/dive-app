@@ -9,6 +9,9 @@
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #  password_digest :string(255)
+#  remember_token  :string(255)
+#  admin           :boolean          default(FALSE)
+#  isCoach         :boolean
 #
 
 require 'spec_helper'
@@ -17,6 +20,8 @@ require 'spec_helper'
 
     before do
       @user = User.new(name: "Example User", email: "user@example.com", isDiver: true,
+                   isCoach: true, city: "Atlanta", state: "Georgia", gender: "male", 
+                   birthday: Date.new(1991,1,17),
                    password: "foobar", password_confirmation: "foobar")
     end
 
@@ -25,6 +30,11 @@ require 'spec_helper'
     it { should respond_to(:name) }
     it { should respond_to(:email) }
     it { should respond_to(:isDiver) }
+    it { should respond_to(:isCoach) }
+    it {should respond_to(:city) }
+    it {should respond_to(:state) }
+    it {should respond_to(:gender) }
+    it {should respond_to(:birthday) }
     it { should respond_to(:password_digest) }
     it { should respond_to(:password) }
     it { should respond_to(:password_confirmation) }

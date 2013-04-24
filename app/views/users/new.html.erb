@@ -11,16 +11,25 @@
       <%= f.label :email %>
       <%= f.text_field :email %>
 
+      <%= f.label :gender %>
+      <%= f.radio_button :gender, 'male', :checked => true %> Male
+      <%= f.radio_button :gender, 'female' %> Female 
+      <br>
+      <br>
+
       <%= f.check_box :isDiver %> 
       <%= label :isDiver, 'Diver' %>
       <%= f.check_box :isCoach %>
       <%= label :isCoach, 'Coach' %>
 
-      <!-- Could be cool for later -->
-      <select>
-        <option>Diver</option>
-        <option>Coach</option>
-      </select>
+      <%= f.label :city %>
+      <%= f.text_field :city %>
+
+      <%= f.label :state %>
+      <%= f.select :state, options_for_select(us_states) %>
+
+      <%= f.label :birthday %>
+      <%= f.date_select :birthday, :start_year => Time.now.year - 70 %>
 
       <%= f.label :password %>
       <%= f.password_field :password %>

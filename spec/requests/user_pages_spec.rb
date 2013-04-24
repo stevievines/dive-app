@@ -76,12 +76,20 @@ describe "User pages" do
       end
     end
 
-    # note: this test only creates a valid diver. should try a valid coach too?
+    # note: this test only creates a valid diver and coach. should try a valid coach too?
     describe "with valid information" do
       before do
         fill_in "Name",         with: "Example User"
         fill_in "Email",        with: "user@example.com"
-        choose "user_isDiver_true" # select radio button
+        choose"user_gender_male"
+        fill_in "City",          with: "Atlanta"
+        select 'Georgia',       from: "user_state"
+        # fill in birthday
+        select '1991',          from: "user_birthday_1i"
+        select 'January',       from: "user_birthday_2i"
+        select '17',            from: "user_birthday_3i"
+        check "user_isDiver" # select diver check box
+        check "user_isCoach" # select coach check box
         fill_in "Password",     with: "foobar"
         fill_in "Confirmation", with: "foobar"
       end
@@ -126,7 +134,8 @@ describe "User pages" do
       before do
         fill_in "Name",             with: new_name
         fill_in "Email",            with: new_email
-        choose "user_isDiver_false" # select radio button
+        check "user_isDiver" # select diver check box
+        check "user_isCoach" # select coach check box
         fill_in "Password",         with: user.password
         fill_in "Confirm Password", with: user.password
         click_button "Save changes"

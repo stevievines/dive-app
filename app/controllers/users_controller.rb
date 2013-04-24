@@ -18,6 +18,13 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
+      # find or create diver in db as well!
+      if @user.isDiver
+        @diver = Diver.new(name: @user.name, city: @user.city, state: @user.state,
+                    gender: @user.gender, birthday: @user.birthday)
+        @diver.save
+      end
+      # and analagous thing for coach
       sign_in @user
       flash[:success] = "Welcome to the Dive App!"
       redirect_to @user
