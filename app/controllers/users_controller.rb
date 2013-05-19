@@ -21,10 +21,16 @@ class UsersController < ApplicationController
       # find or create diver in db as well!
       if @user.isDiver
         @diver = Diver.new(name: @user.name, city: @user.city, state: @user.state,
-                    gender: @user.gender, birthday: @user.birthday)
+                    country: "USA", gender: @user.gender, birthday: @user.birthday)
         @diver.save
       end
       # and analagous thing for coach
+      # find or create diver in db as well!
+      if @user.isCoach
+        @coach = Coach.new(name: @user.name, city: @user.city, state: @user.state,
+                    country: "USA", gender: @user.gender, birthday: @user.birthday)
+        @coach.save
+      end
       sign_in @user
       flash[:success] = "Welcome to the Dive App!"
       redirect_to @user

@@ -1,3 +1,7 @@
+# note: when a new user is created with the form, it automatically
+# creates a new diver, but that doesn't happen here. not sure why?
+
+
 namespace :db do
   desc "Fill database with sample data"
   task populate: :environment do
@@ -6,7 +10,8 @@ namespace :db do
                  isDiver: true,
                  isCoach: true,
                  city: "Atlanta", 
-                 state: "Georgia", 
+                 state: "Georgia",
+                 country: "USA", 
                  gender: "male", 
                  birthday: Date.new(1991,1,17),
                  password: "foobar",
@@ -17,7 +22,8 @@ namespace :db do
                  isDiver: false,
                  isCoach: false,
                  city: "Atlanta", 
-                 state: "Georgia", 
+                 state: "Georgia",
+                 country: "USA", 
                  gender: "female", 
                  password: "foobar",
                  birthday: Date.new(1991,1,17),
@@ -28,7 +34,8 @@ namespace :db do
                  isDiver: false,
                  isCoach: true,
                  city: "Atlanta", 
-                 state: "Georgia", 
+                 state: "Georgia",
+                 country: "USA", 
                  gender: "male", 
                  birthday: Date.new(1991,1,17),
                  password: "foobar",
@@ -38,7 +45,8 @@ namespace :db do
                  isDiver: true,
                  isCoach: false,
                  city: "Atlanta", 
-                 state: "Georgia", 
+                 state: "Georgia",
+                 country: "USA", 
                  gender: "female", 
                  birthday: Date.new(1991,1,17),
                  password: "foobar",
@@ -53,6 +61,7 @@ namespace :db do
                    isCoach: false,
                    city: "Atlanta", 
                    state: "Georgia", 
+                   country: "USA",
                    gender: "male", 
                    birthday: Date.new(1991,1,17),
                    password: password,
@@ -62,16 +71,12 @@ namespace :db do
       name = Faker::Name.name
       email = "example-#{n+1}@coach.com"
       password  = "password"
-      User.create!(name: name,
-                   email: email,
-                   isDiver: false,
-                   isCoach: true,
+      Coach.create!(name: name,
                    city: "Atlanta", 
-                   state: "Georgia", 
-                   gender: "male", 
-                   birthday: Date.new(1991,1,17),
-                   password: password,
-                   password_confirmation: password)
+                   state: "Georgia",
+                   country: "USA", 
+                   gender: "male",
+                   birthday: Date.new(1990,11,19))
     end
     # create divers (since auto creation of users wont...)
     50.times do |n|
@@ -79,9 +84,10 @@ namespace :db do
       password  = "password"
       Diver.create!(name: name,
                    city: "Atlanta", 
-                   state: "Georgia", 
+                   state: "Georgia",
+                   country: "USA", 
                    gender: "male", 
-                   birthday: Date.new(1991,1,17))
+                   birthday: Date.new(1990,11,19))
     end
   end
 end

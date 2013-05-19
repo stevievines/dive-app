@@ -12,6 +12,11 @@
 #  remember_token  :string(255)
 #  admin           :boolean          default(FALSE)
 #  isCoach         :boolean
+#  city            :string(255)
+#  state           :string(255)
+#  gender          :string(255)
+#  birthday        :datetime
+#  country         :string(255)
 #
 
 require 'spec_helper'
@@ -31,10 +36,10 @@ require 'spec_helper'
     it { should respond_to(:email) }
     it { should respond_to(:isDiver) }
     it { should respond_to(:isCoach) }
-    it {should respond_to(:city) }
-    it {should respond_to(:state) }
-    it {should respond_to(:gender) }
-    it {should respond_to(:birthday) }
+    it { should respond_to(:city) }
+    it { should respond_to(:state) }
+    it { should respond_to(:gender) }
+    it { should respond_to(:birthday) }
     it { should respond_to(:password_digest) }
     it { should respond_to(:password) }
     it { should respond_to(:password_confirmation) }

@@ -11,7 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130424005852) do
+ActiveRecord::Schema.define(:version => 20130519190757) do
+
+  create_table "coaches", :force => true do |t|
+    t.string   "name"
+    t.string   "city"
+    t.string   "state"
+    t.string   "country"
+    t.string   "gender"
+    t.integer  "divemeets_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.date     "birthday"
+  end
 
   create_table "divers", :force => true do |t|
     t.string   "name"
@@ -22,6 +34,7 @@ ActiveRecord::Schema.define(:version => 20130424005852) do
     t.integer  "divemeets_id"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+    t.string   "country"
   end
 
   create_table "users", :force => true do |t|
@@ -38,6 +51,7 @@ ActiveRecord::Schema.define(:version => 20130424005852) do
     t.string   "state"
     t.string   "gender"
     t.datetime "birthday"
+    t.string   "country"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

@@ -1,0 +1,14 @@
+<% provide(:title, 'All coaches') %>
+<h1>All coaches</h1>
+
+<%= will_paginate %>
+
+<ul class="coaches">
+ <% @coaches.each do |coach| %>
+    <li>
+      <%= link_to coach.name, coach %>
+    </li>
+  <% end %>
+</ul>
+
+<%= will_paginate %>

@@ -28,6 +28,9 @@
       <%= f.label :state %>
       <%= f.select :state, options_for_select(us_states) %>
 
+      <%= f.label :country %>
+      <%= f.text_field :country %>
+
       <%= f.label :birthday %>
       <%= f.date_select :birthday, :start_year => Time.now.year - 70 %>
 

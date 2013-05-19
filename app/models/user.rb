@@ -16,11 +16,12 @@
 #  state           :string(255)
 #  gender          :string(255)
 #  birthday        :datetime
+#  country         :string(255)
 #
 
 class User < ActiveRecord::Base
   attr_accessible :email, :isDiver, :isCoach, :name, 
-                  :city, :state, :gender, :birthday, 
+                  :city, :state, :country, :gender, :birthday, 
                   :password, :password_confirmation
   has_secure_password
 

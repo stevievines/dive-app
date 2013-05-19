@@ -1,29 +1,29 @@
 # == Schema Information
 #
-# Table name: divers
+# Table name: coaches
 #
 #  id           :integer          not null, primary key
 #  name         :string(255)
 #  city         :string(255)
 #  state        :string(255)
+#  country      :string(255)
 #  gender       :string(255)
-#  birthday     :date
 #  divemeets_id :integer
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
-#  country      :string(255)
+#  birthday     :date
 #
 
 require 'spec_helper'
 
-describe Diver do
+describe Coach do
   
   before do
-  	@diver = Diver.new(name: "Stevie Vines", city: "Atlanta", state: "Georgia",
+  	@coach = Coach.new(name: "Stevie Vines", city: "Atlanta", state: "Georgia",
   			country: "USA", gender: "male", birthday: DateTime.new(1991,1,17), divemeets_id: 12307)
   end
 
-  subject { @diver }
+  subject { @coach }
 
   it { should respond_to(:name) }
   it { should respond_to(:city) }
@@ -36,27 +36,27 @@ describe Diver do
   it { should be_valid } 
 
   describe "when name is not present" do
-    before { @diver.name = " " }
+    before { @coach.name = " " }
     it { should_not be_valid }
   end
 
   describe "when name is too long" do
-    before { @diver.name = "a" * 51 }
+    before { @coach.name = "a" * 51 }
     it { should_not be_valid }
   end
 
   describe "when city is not present" do
-    before { @diver.city = " " }
+    before { @coach.city = " " }
     it { should_not be_valid }
   end
 
   describe "when state is not present" do
-    before { @diver.state = " " }
+    before { @coach.state = " " }
     it { should_not be_valid }
   end
 
   describe "when country is not present" do
-    before { @diver.country = " " }
+    before { @coach.country = " " }
     it { should_not be_valid }
   end
 end

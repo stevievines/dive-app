@@ -76,7 +76,7 @@ describe "User pages" do
       end
     end
 
-    # note: this test only creates a valid diver and coach. should try a valid coach too?
+    # note: this test only creates a valid diver and coach.
     describe "with valid information" do
       before do
         fill_in "Name",         with: "Example User"
@@ -84,6 +84,7 @@ describe "User pages" do
         choose"user_gender_male"
         fill_in "City",          with: "Atlanta"
         select 'Georgia',       from: "user_state"
+        fill_in "Country",        with: "USA"
         # fill in birthday
         select '1991',          from: "user_birthday_1i"
         select 'January',       from: "user_birthday_2i"
@@ -96,6 +97,14 @@ describe "User pages" do
 
       it "should create a user" do
         expect { click_button submit }.to change(User, :count).by(1)
+      end
+
+      it "should create a diver" do
+        expect { click_button submit }.to change(Diver, :count).by(1)
+      end
+
+      it "should create a coach" do
+        expect { click_button submit }.to change(Coach, :count).by(1)
       end
 
       describe "after saving the user" do

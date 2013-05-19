@@ -23,4 +23,12 @@ FactoryGirl.define do
     state "Georgia"
     birthday DateTime.new(1991,1,17)
   end
+
+  factory :coach do
+    sequence(:name)  { |n| "Person #{n}" }
+    gender "male"
+    city "Atlanta"
+    state "Georgia"
+    country "USA"
+  end
 end
